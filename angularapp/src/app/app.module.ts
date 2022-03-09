@@ -9,6 +9,7 @@ import { DemotestComponent } from './demotest/demotest.component';
   declarations: [
     AppComponent,
     DemotestComponent
+
   ],
   imports: [
     BrowserModule,
