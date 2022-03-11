@@ -1,0 +1,36 @@
+h1{
+    text-align: center;
+    color: white;
+    background-color:#400000 ;
+    padding: 25px;
+    font-size: 30px;
+    margin: 0%;
+}
+div{
+    text-align: center;
+    padding: 40px;
+    margin: 5px;
+}
+input,select{
+    margin: 5px;
+    background-color: rgb(205, 233, 230);
+    color: black;
+    padding: 5px;
+    width: 20%;
+    border: 1px solid black;
+}
+input::placeholder{
+    text-align: center;
+ }
+button{
+    background-color: #192024;
+    color: white;
+    margin: 10px;
+    padding: 10px 25px;
+    font-size: 10x;
+}
+a:link {
+    text-decoration: none;
+    color: #245e80;
+  }
+  
