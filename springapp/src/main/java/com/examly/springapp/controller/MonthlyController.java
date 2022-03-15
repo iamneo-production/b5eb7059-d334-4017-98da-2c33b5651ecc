@@ -1,5 +1,4 @@
 package  com.examly.springapp.controller;
-
 import  com.examly.springapp.entity.Monthly;
 import  com.examly.springapp.entity.Premium;
 import  com.examly.springapp.service.MonthlyService;
