@@ -1,0 +1,42 @@
+<div class="RegisterMiddle">
+    <div class="RegisterImg"><img src="./assets/login.png" alt="" class="RegisterImage"></div>
+    <div class="RegisterComponent">
+    <form class="RegisterCard" [formGroup]="registerForm" (ngSubmit)="formSubmit()">
+        <h1 class="RegisterHeading">Register</h1>
+        
+            <div class="InputBox1">
+                <input [(ngModel)]="user.username" class="InputField1" type="text" placeholder="Enter Username" formControlName="username"/>
+                <small class="ErrorMsg1"  *ngIf="username && username.invalid && username.touched">*Username is invalid</small>
+            </div>
+            
+            <div class="InputBox1">
+                <input [(ngModel)]="user.password" class="InputField1" type="password" placeholder="Enter Password" formControlName="password1"/>
+                <small class="ErrorMsg1" *ngIf="password1 && password1.invalid && password1.touched">*Password length must be 5 characters</small>
+            </div>
+
+            <div class="InputBox1">
+                <input [(ngModel)]="user.firstName" class="InputField1" type="text" placeholder="Enter Firstname" formControlName="firstname"/>
+                <small class="ErrorMsg1" *ngIf="firstname && firstname.invalid && firstname.touched">*First name length must atleast be 3 characters</small>
+            </div>
+
+            <div class="InputBox1">
+                <input [(ngModel)]="user.lastName" class="InputField1" type="text" placeholder="Enter Lastname" formControlName="secondname"/>
+                <small class="ErrorMsg1" *ngIf="secondname && secondname.invalid && secondname.touched">*Last name length must be atlesat 5 characters</small>
+            </div>
+
+          <div class="InputBox1">
+            <input [(ngModel)]="user.email" class="InputField1" type="text" placeholder="Enter Email" formControlName="email"/>
+            <small class="ErrorMsg1" *ngIf="email && email.invalid && email.touched">*Email is invalid</small>
+        </div>
+    
+        <div class="InputBox1">
+            <input [(ngModel)]="user.phone" class="InputField1" type="number" placeholder="Enter Mobile Number" formControlName="mobile"/>
+            <small class="ErrorMsg1"  *ngIf="mobile && mobile.invalid && mobile.touched">*Must be a 10-digit number</small>
+        </div>
+        
+        <button [disabled]="registerForm.invalid" class="RegisterBtn" routerLink="../login">Submit</button>
+        <p class="Login">Already a User/Admin? <a routerLink="../login" class="LoginLink">Login</a></p>
+    </form>
+    </div>
+</div>    
+<div class="RegisterBottom"></div>
