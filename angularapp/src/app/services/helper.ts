@@ -1,3 +1,3 @@
-let baseUrl = "http://localhost:8083";
+let baseUrl = "https://8080-effdcadddecbfdffdfdffafea.examlyiopb.examly.io";
 
 export default baseUrl;
