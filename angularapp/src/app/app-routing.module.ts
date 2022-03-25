@@ -1,13 +1,20 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AddonsComponent } from './addons/addons.component';
+import { AddonFormComponent } from './admin/addon-form/addon-form.component';
+import { AdminaddonsComponent } from './admin/adminaddons/adminaddons.component';
+import { MonthlyFormComponent } from './admin/monthly-form/monthly-form.component';
+import { MonthlyplansComponent } from './admin/monthlyplans/monthlyplans.component';
+import { PremiumFormComponent } from './admin/premium-form/premium-form.component';
+import { PremiumplansComponent } from './admin/premiumplans/premiumplans.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { DetailsComponent } from './details/details.component';
 import { HistoryComponent } from './history/history.component';
 import { NotificationComponent } from './notification/notification.component';
-import { PopularplansComponent } from './popularplans/popularplans.component';
 import { ReviewComponent } from './review/review.component';
 import { ReviewformComponent } from './reviewform/reviewform.component';
+import { UsermonthlyplansComponent } from './usermonthlyplans/usermonthlyplans.component';
+import { UserpremiumplansComponent } from './userpremiumplans/userpremiumplans.component';
 
 const routes: Routes = [
   {
@@ -20,8 +27,8 @@ const routes: Routes = [
         path:'addRecharge',
         component:DetailsComponent
       },{
-        path:'popularplans',
-        component:PopularplansComponent
+        path:'premiumplans',
+        component:UserpremiumplansComponent
       },{
         path:'getRecharge',
         component:HistoryComponent
@@ -37,9 +44,38 @@ const routes: Routes = [
       },{
         path:'addReview',
         component:ReviewformComponent
+      },{
+        path:'monthlyplans',
+        component:UsermonthlyplansComponent
       }
     ]
-    }
+    },{
+    path:'admin',
+    children:[
+      {
+        path:'addform',
+        component:AddonFormComponent
+      },{
+        path:'addon',
+        component:AdminaddonsComponent
+      },{
+        path:'premium',
+        component:PremiumplansComponent
+      },
+      {
+        path:'monthly',
+        component:MonthlyplansComponent
+      },
+      {
+        path:'premiumform',
+        component:PremiumFormComponent
+      },
+      {
+        path:'monthlyform',
+        component:MonthlyFormComponent
+      }
+    ]
+  }
 ];
 
 @NgModule({

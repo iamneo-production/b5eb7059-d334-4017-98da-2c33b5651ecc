@@ -19,27 +19,7 @@
     border:6px solid rgb(173, 8, 173);
     text-align: center;
 }
-.menu{
-    background:purple ;
-    text-align: center;
-    height: 50px;
-    }
-    .menu ul{
-        display: inline-flex;
-        list-style: none;
-        color: white;
-    }
-    .menu ul li{
-        width:150px;
-        margin:5px;
-        padding: 7px;
-        font-weight: bold;
-    }
-    ul li a{
-        text-decoration: none;
-        color: white;
 
-    }
     #PopularPlans{
         color:white;
         font-size: 15px;
@@ -92,4 +72,23 @@
     background-color: rgb(145, 26, 168);
     color: white;
     border-radius: 12px;
+}
+nav{
+    background-color:purple;
+}
+.design
+{
+height: 800px;
+background-size:100% ;
+
+}
+#na{
+height: 50px;
+}
+
+.style
+{
+position: absolute;
+right: 10px;
+
 }

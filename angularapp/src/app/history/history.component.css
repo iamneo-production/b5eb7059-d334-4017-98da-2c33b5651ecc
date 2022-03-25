@@ -1,24 +1,24 @@
-.menu{
-    background:purple ;
-    text-align: center;
-    height: 50px;
-    }
-    .menu ul{
-        display: inline-flex;
-        list-style: none;
-        color: white;
-    }
-    .menu ul li{
-        width:150px;
-        margin:5px;
-        padding: 7px;
-        font-weight: bold;
-    }
-    ul li a{
-        text-decoration: none;
-        color: white;
+nav{
+    background-color:purple;
+}
+.design
+{
+height: 800px;
+background-size:100% ;
 
-    }
+}
+#na{
+height: 50px;
+}
+#details{
+    font-weight: bold;
+}
+.style
+{
+position: absolute;
+right: 10px;
+
+}
 #history{
     color: red;
 }    

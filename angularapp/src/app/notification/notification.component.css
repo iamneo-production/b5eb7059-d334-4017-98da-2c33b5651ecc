@@ -1,29 +1,4 @@
-.menu{
-    background:purple ;
-    text-align: center;
-    height: 50px;
-    }
-    .menu ul{
-        display: inline-flex;
-        list-style: none;
-        color: white;
-    }
-    .menu ul li{
-        width:150px;
-        margin:5px;
-        padding: 7px;
-        font-weight: bold;
-    }
-    ul li a{
-        text-decoration: none;
-        color:white;
-        
-
-    }
-#notification{
-    color: red;
-    font-size: 20px;
-}    
+ 
 #notificationBody{
     background: #f2f1f1;
     padding: 25px;
@@ -33,4 +8,26 @@
     height: 250px;
     border:6px solid rgb(149, 13, 190);
     text-align: center;
+}
+nav{
+    background-color:purple;
+}
+.design
+{
+height: 800px;
+background-size:100% ;
+
+}
+#na{
+height: 50px;
+}
+#notification{
+    font-weight: bold;
+}
+
+.style
+{
+position: absolute;
+right: 10px;
+
 }

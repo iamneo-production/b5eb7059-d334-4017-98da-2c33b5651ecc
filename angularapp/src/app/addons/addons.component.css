@@ -1,7 +1,4 @@
-*{
-    padding: 0;
-    margin: 0;
-}
+
 body{
     background-image: url('addonimg.jpg');
     background-size: cover;
@@ -11,15 +8,7 @@ body{
     left: 0px;
     top: 65px;
 }
-.combo-box1{
-    background: #f2f1f1;
-    padding: 25px;
-    margin: 50px;
-    border-radius: 20px;
-    transition: all .2s ease-in-out;
-    height: 250px;
-    border-left:6px solid rgb(33, 30, 212);
-}
+
 .combo-box2{
     background: #f2f1f1;
     padding: 25px;
@@ -29,51 +18,32 @@ body{
     height: 250px;
     border-left:6px solid rgb(33, 30, 212);
 }
-.vertical {
-    border-left: 3px solid #b4b3be;
-    height: 180px;
-    position: absolute;
-    left: 28%;
-    margin-left: -3px;
-    top:110px;
-  }
-  .vertical-down{
-    border-left: 3px solid #b4b3be;
-    height: 180px;
-    position: absolute;
-    left: 28%;
-    margin-left: -3px;
-    top:400px;
-  }
+.card-body a{
+    font-weight: bold;
+    color:black;
+    font-size: 50px;
+    text-decoration: none;
+}
+nav{
+    background-color:purple;
+}
+.design
+{
+height: 800px;
+background-size:100% ;
 
-.menu{
-background:purple ;
-text-align: center;
+}
+#na{
 height: 50px;
 }
-.menu ul{
-    display: inline-flex;
-    list-style: none;
-    color: white;
-}
-.menu ul li{
-    width:150px;
-    margin:5px;
-    padding: 7px;
+
+#addons{
     font-weight: bold;
 }
-ul li a{
-    text-decoration: none;
-    color:white;
-}
-#userAddOns{
-    color: red;
-    font-size: 20px;
-}
-.vertical a,.vertical-down a{
-    margin: 250px;
-    font-weight: bold;
-    font-size: 50px;
-    color: black;
-    text-decoration: none;
+
+.style
+{
+position: absolute;
+right: 10px;
+
 }

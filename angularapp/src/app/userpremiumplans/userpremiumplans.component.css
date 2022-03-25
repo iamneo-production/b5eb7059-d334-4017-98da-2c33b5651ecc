@@ -1,0 +1,46 @@
+
+body{
+    background: url(Popularback.jpg);
+    background-size: cover;
+    position: absolute;
+    width: 1520px;
+    height: 1000px;
+    left: 0px;
+    top: 65px;
+}
+.combo-box2{
+    background: #f2f1f1;
+    padding: 25px;
+    margin: 50px;
+    border-radius: 20px;
+    transition: all .2s ease-in-out;
+    height: 250px;
+    border-left:6px solid rgb(33, 30, 212);
+}
+.card-body a{
+    font-weight: bold;
+    color:black;
+    font-size: 50px;
+    text-decoration: none;
+}
+
+    nav{
+        background-color:purple;
+    }
+    .design
+{
+    background-image: url(Popularback.jpg);
+    height: 800px;
+    background-size:100% ;
+    
+}
+#premium{
+    font-weight: bold;
+}
+
+.style
+{
+    position: absolute;
+    right: 10px;
+    
+}
