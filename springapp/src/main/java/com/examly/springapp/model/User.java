@@ -13,22 +13,27 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 @Table(name = "users")
-public class User {
-
-    @Id
+public class User implements UserDetails{
+	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+	private Long id;
+	private String username;
+	private String password;
+	
+	private String email;
+	private String mobileNumber;
+	private boolean enabled = true;
+	
+	private String role;
 
-    private String email;
-    private String password;
-    private String username;
-    private String mobileNumber;
-
-    // user can have many roles
+	// user can have many roles
 	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "user")
 	@JsonIgnore
 	private Set<UserRole> userRoles = new HashSet<>();
@@ -37,7 +42,9 @@ public class User {
 		super();
 	}
 
-    public Long getId() {
+	
+
+	public Long getId() {
 		return id;
 	}
 
@@ -61,7 +68,9 @@ public class User {
 		this.password = password;
 	}
 
-    public String getEmail() {
+	
+
+	public String getEmail() {
 		return email;
 	}
 
@@ -69,18 +78,66 @@ public class User {
 		this.email = email;
 	}
 
-    public String getMobileNumber() {
+	public String getmobileNumber() {
 		return mobileNumber;
 	}
 
-	public void setMobileNumber(String mobileNumber) {
+	public void setmobileNumber(String mobileNumber) {
 		this.mobileNumber = mobileNumber;
 	}
-    public Set<UserRole> getUserRoles() {
+
+	public boolean isEnabled() {
+		return enabled;
+	}
+
+	public void setEnabled(boolean enabled) {
+		this.enabled = enabled;
+	}
+
+	
+
+	public Set<UserRole> getUserRoles() {
 		return userRoles;
 	}
 
 	public void setUserRoles(Set<UserRole> userRoles) {
 		this.userRoles = userRoles;
 	}
+
+	public String getRole() {
+		return role;
+	}
+
+	public void setRole(String role) {
+		this.role = role;
+	}
+	@Override
+	public Collection<? extends GrantedAuthority> getAuthorities() {
+		// TODO Auto-generated method stub
+		Set<Authority> set = new HashSet<>();
+		
+		this.userRoles.forEach(userRole->{
+			set.add(new Authority(userRole.getRole().getRoleName()));
+		});
+		return set;
+	}
+
+	@Override
+	public boolean isAccountNonExpired() {
+		// TODO Auto-generated method stub
+		return true;
+	}
+
+	@Override
+	public boolean isAccountNonLocked() {
+		// TODO Auto-generated method stub
+		return true;
+	}
+
+	@Override
+	public boolean isCredentialsNonExpired() {
+		// TODO Auto-generated method stub
+		return true;
+	}
+	
 }

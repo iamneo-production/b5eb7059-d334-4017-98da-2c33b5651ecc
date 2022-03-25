@@ -36,15 +36,34 @@ public class UserController {
 		
 		Set<UserRole> roles = new HashSet<>();
 		
+		String str = user.getRole();
+		
 		Role role = new Role();
-		role.setRoleId(2L);
-		role.setRoleName("Normal");
+		
+		
+		
+		if(str.equals("Admin"))
+		{
+			role.setRoleId(1L);
+			role.setRoleName("Admin");
+		}
+		else
+		{
+			role.setRoleId(2L);
+			role.setRoleName("Normal");
+		}
+		
+		
 		
 		UserRole userRole = new UserRole();
 		userRole.setRole(role);
 		userRole.setUser(user);
 		
 		roles.add(userRole);
+		
+		System.out.println(str);
+		
+		System.out.println(user);
 		
 		return this.userService.createUser(user, roles);
 		

@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-
 import { UserService } from 'src/app/services/user.service';
-
 
 @Component({
   selector: 'app-signup',
@@ -14,8 +12,10 @@ export class SignupComponent implements OnInit {
   registerForm= new FormGroup({
     email: new FormControl('',[Validators.required,Validators.email]),
     username: new FormControl('',[Validators.required,Validators.minLength(3)]),
+    
     mobileNumber: new FormControl('',[Validators.required,Validators.maxLength(10)]),
     password1: new FormControl('',[Validators.required,Validators.minLength(5)]),
+    role:new FormControl('',[Validators.required,Validators.minLength(5)])
   })
 
   get dropdown(){
@@ -30,13 +30,8 @@ export class SignupComponent implements OnInit {
     return this.registerForm.get('username');
   }
 
-  get firstname(){
-    return this.registerForm.get('firstname');
-  }
-
-  get secondname(){
-    return this.registerForm.get('secondname');
-  }
+  
+  
 
   get mobileNumber(){
     return this.registerForm.get('mobileNumber');
@@ -46,12 +41,17 @@ export class SignupComponent implements OnInit {
     return this.registerForm.get('password1');
   }
   
+  get role(){
+    return this.registerForm.get('role');
+  }
 
   public user = {
     username:'',
     password:'',
+    
     email:'',
-    mobileNumber:''
+    mobileNumber:'',
+    role:''
   };
   constructor(private userService:UserService) { }
 
@@ -62,7 +62,7 @@ export class SignupComponent implements OnInit {
     if(this.user.username == '' || this.user.username == null)
     {
       //alert('User is required')
-     
+      alert('username is required')
       return;
     }
     //Adding User
@@ -71,13 +71,12 @@ export class SignupComponent implements OnInit {
         //success
         console.log(data)
         alert('success')
-        
 
       },
       (error)=>{
         //error
         console.log(error);
-       
+        alert('error')
       }
     )
   }
